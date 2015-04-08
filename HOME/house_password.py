@@ -11,9 +11,14 @@ def checkio(data):
             is_secure = True
     return is_secure
 
-#Some hints
-#Just check all conditions
-
+# the highest vote answer
+# http://www.checkio.org/mission/house-password/publications/oduvan/python-27/first/?ordering=most_voted
+def checkio_highest_vote(data):
+    return bool(len(data) >= 10 \
+        # filter(function, iterable) is equivalent to [item for item in iterable if function(item)]
+        and filter(lambda a:a.isupper(), data) \
+        and filter(lambda a:a.islower(), data) \
+        and filter(lambda a:a.isdigit(), data))
 
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
