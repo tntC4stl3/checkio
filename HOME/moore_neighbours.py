@@ -21,6 +21,15 @@ def count_neighbours(grid, row, col):
             count += grid[row_1][col_1]
     return count
 
+
+# http://www.checkio.org/mission/count-neighbours/publications/gyahun_dash/python-3/first/?ordering=most_voted
+def checkio_highest_vote(grid, row, col):
+    rows = range(max(0, row - 1), min(row + 2, len(grid)))
+    cols = range(max(0, col - 1), min(col + 2, len(grid[0])))
+
+    return sum(grid[r][c] for r in rows for c in cols) - grid[row][col]
+
+
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
     assert count_neighbours(
