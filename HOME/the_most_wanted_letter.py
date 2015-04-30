@@ -13,6 +13,13 @@ def checkio(text):
     chars = sorted(char_dict.items(), key=lambda item: (-item[1], item[0]))
     return chars[0][0]
 
+
+# http://www.checkio.org/mission/most-wanted-letter/publications/bryukh/python-3/max-count/?ordering=most_voted
+def checkio_most_voted(text):
+    text = text.lower()
+    return max(string.ascii_lowercase, key=text.count)
+
+
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
     assert checkio(u"Hello World!") == "l", "Hello test"
