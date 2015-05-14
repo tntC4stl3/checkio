@@ -1,5 +1,5 @@
 def checkio(first, second):
-    return ','.join(set(first.split(',')).intersection(set(second.split(','))))
+    return ','.join(sorted(set(first.split(',')).intersection(set(second.split(',')))))
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
