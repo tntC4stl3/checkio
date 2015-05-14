@@ -4,7 +4,7 @@ def count_inversion(sequence):
     """
     count = 0
     for i, num in enumerate(sequence):
-        for compare_num in sequence[i:]:
+        for compare_num in sequence[i+1:]:
             if num > compare_num:
                 count += 1
     return count
